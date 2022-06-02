@@ -50,15 +50,15 @@ function doRequest(protocol: Protocol, isSlow: boolean) {
 
 function doParallelRequests(protocol: Protocol) {
     console.log(`do request by protocol ${Protocol[protocol]}`);
-    // slow
-    doRequest(protocol, false);
     // fast
-    doRequest(protocol, true);
+    doRequest(protocol, false);
     // slow
+    doRequest(protocol, true);
+    // fast
     doRequest(protocol, false);
 }
 
 // http1
-// doParallelRequests(Protocol.http1);
+doParallelRequests(Protocol.http1);
 // http2
-doParallelRequests(Protocol.http2);
+// doParallelRequests(Protocol.http2);

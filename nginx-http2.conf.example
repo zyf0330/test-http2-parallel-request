@@ -8,13 +8,6 @@ http {
   server {
     listen 3001 http2;
 
-    # ssl_certificate       /media/zyf/data/Programming/project/worktile/live-test-cert/cert.pem;
-    # ssl_certificate_key   /media/zyf/data/Programming/project/worktile/live-test-cert/key.pem;
-    # ssl_protocols         SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-    # ssl_ciphers           HIGH:!aNULL:!MD5;
-    # ssl_session_cache     shared:SSL-live:20m;
-    # ssl_session_timeout   4h;
-
     location / {
        proxy_pass http://backend;
     }
