@@ -22,5 +22,6 @@ function requestListener(request: IncomingMessage, response: ServerResponse) {
     }, isSlow ? 3000 : 0);
 }
 
-createServer(requestListener).listen(3002, () => console.log("listening on 3001"));
-createServer(requestListener).listen(3003, () => console.log("listening on 3002"));
+[3002, 3003].forEach((port) => {
+  createServer(requestListener).listen(port, () => console.log(`listening on ${port}`));
+})
